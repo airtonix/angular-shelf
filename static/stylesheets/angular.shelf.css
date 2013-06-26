@@ -1,0 +1,71 @@
+/* line 5, ../sass/angular.shelf.sass */
+.contains-shelf .shelf-toggle {
+  min-width: 3em;
+}
+/* line 8, ../sass/angular.shelf.sass */
+.contains-shelf .shelf-cover {
+  background: white;
+  -webkit-transition: margin-left 0.3s ease-in-out;
+  -moz-transition: margin-left 0.3s ease-in-out;
+  -o-transition: margin-left 0.3s ease-in-out;
+  transition: margin-left 0.3s ease-in-out;
+}
+/* line 12, ../sass/angular.shelf.sass */
+.contains-shelf .shelf {
+  position: fixed;
+  height: 100%;
+  width: 85%;
+  height: 100%;
+  background: #222222;
+  -webkit-transition: margin-left 0.3s ease-in-out;
+  -moz-transition: margin-left 0.3s ease-in-out;
+  -o-transition: margin-left 0.3s ease-in-out;
+  transition: margin-left 0.3s ease-in-out;
+}
+/* line 21, ../sass/angular.shelf.sass */
+.contains-shelf.flying-shelf .shelf {
+  z-index: 20;
+  margin-left: 110%;
+  -webkit-box-shadow: 5px 0 5px 0 rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 5px 0 5px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 5px 0 5px 0 rgba(0, 0, 0, 0.2);
+}
+/* line 25, ../sass/angular.shelf.sass */
+.contains-shelf.flying-shelf .shelf-cover {
+  z-index: 1;
+  margin-left: 0%;
+}
+/* line 30, ../sass/angular.shelf.sass */
+.contains-shelf.attached-shelf .shelf {
+  z-index: 1;
+  margin-left: 100%;
+  -webkit-box-shadow: 5px 0 5px 0 rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 5px 0 5px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 5px 0 5px 0 rgba(0, 0, 0, 0.2);
+}
+/* line 34, ../sass/angular.shelf.sass */
+.contains-shelf.attached-shelf .shelf-cover {
+  z-index: 1;
+  margin-left: 0%;
+}
+/* line 39, ../sass/angular.shelf.sass */
+.contains-shelf.revealed-shelf .shelf {
+  z-index: 1;
+  margin-left: 15%;
+  -webkit-box-shadow: 5px 0 5px 0 rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 5px 0 5px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 5px 0 5px 0 rgba(0, 0, 0, 0.2);
+}
+/* line 43, ../sass/angular.shelf.sass */
+.contains-shelf.revealed-shelf .shelf-cover {
+  z-index: 20;
+  margin-left: 0%;
+}
+/* line 50, ../sass/angular.shelf.sass */
+.contains-shelf.active.attached-shelf .shelf, .contains-shelf.active.flying-shelf .shelf {
+  margin-left: 15%;
+}
+/* line 55, ../sass/angular.shelf.sass */
+.contains-shelf.active.revealed-shelf .shelf-cover, .contains-shelf.active.attached-shelf .shelf-cover {
+  margin-left: -85%;
+}

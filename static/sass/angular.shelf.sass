@@ -1,0 +1,56 @@
+@import "compass/css3"
+
+.contains-shelf
+
+    .shelf-toggle
+        min-width: 3em
+
+    .shelf-cover
+        background: white
+        +transition(margin-left 0.3s ease-in-out)
+
+    .shelf
+        position: fixed
+        height: 100%
+        width: 85%
+        height: 100%
+        background: #222
+        +transition(margin-left 0.3s ease-in-out)
+
+    &.flying-shelf
+        .shelf
+            z-index: 20
+            margin-left: 110%
+            +box-shadow(5px 0 5px 0 rgba(#000, 0.2))
+        .shelf-cover
+            z-index: 1
+            margin-left: 0%
+
+    &.attached-shelf
+        .shelf
+            z-index: 1
+            margin-left: 100%
+            +box-shadow(5px 0 5px 0 rgba(#000, 0.2))
+        .shelf-cover
+            z-index: 1
+            margin-left: 0%
+
+    &.revealed-shelf
+        .shelf
+            z-index: 1
+            margin-left: 15%
+            +box-shadow(5px 0 5px 0 rgba(#000, 0.2))
+        .shelf-cover
+            z-index: 20
+            margin-left: 0%
+
+    &.active
+        &.attached-shelf,
+        &.flying-shelf
+            .shelf
+                margin-left: 15%
+
+        &.revealed-shelf,
+        &.attached-shelf
+            .shelf-cover
+                margin-left: -85%

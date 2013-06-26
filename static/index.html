@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html data-ng-app="ShelfDemonstration">
+  <head>
+    <meta charset="utf-8">
+    <title>Angular Shelf</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="stylesheet" href="http://maker.github.io/ratchet/dist/ratchet.css">
+    <link rel="stylesheet" href="./stylesheets/angular.shelf.css">
+    <script type="text/javascript" src="http://code.angularjs.org/1.1.5/angular.js"></script>
+    <script type="text/javascript" src="./javascripts/angular.shelf.js"></script>
+    <script type="text/javascript" src="http://maker.github.io/ratchet/dist/ratchet.js"></script>
+    <script type="text/javascript">
+      angular.module("ShelfDemonstration", [ 'zj.ui.shelf' ])
+        .controller("DemonstrationController", function($scope){
+          $scope.Title="Angular Shelf";
+        })
+    </script>
+    <style type="text/css">
+      section{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+      }
+      section > [class*="bar-"]{ position: absolute ;}
+      section > .content{ position: absolute ;}
+      .shelf .content, .shelf *{ background: #333;}
+      .shelf .button{ border:none;background: #222;color:#eee;}
+      .shelf *{ box-shadow:none; color: #ddd;}
+      .shelf .button, .shelf .toggle, .shelf .toggle-handle{ box-shadow:none; border:1px solid #222; text-shadow:none;}
+      .shelf .shelf-toggle:active{background:#fc3;color:#222;}
+    </style>
+  </head>
+  <!--
+    element containing the shelf must have one of the following classnames:
+      - flyover-shelf
+      - revealed-shelf
+      - attached-shelf
+    //-->
+  <body class="contains-shelf revealed-shelf" data-ng-controller="DemonstrationController">
+
+    <section class="shelf-cover">
+      <header class="bar-title">
+        <button class='button'>something</button>
+        <h1 class="title">{{ Title }}</h1>
+        <button class='button shelf-toggle'>Settings</button>
+      </header>
+      <div class="content">
+        <ul class="list">
+          <li>Something</li>
+          <li>Something</li>
+          <li>Something</li>
+          <li>Darkside</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="shelf">
+      <header class="bar-title">
+        <button class='button shelf-toggle'>x</button>
+        <h1 class="title">Settings</h1>
+      </header>
+      <div class="content content-padded">
+        <ul class="list">
+          <li>
+            Something
+            <div class="toggle active">
+              <div class="toggle-handle"></div>
+            </div>
+          </li>
+          <li>
+            Something
+            <div class="toggle active">
+              <div class="toggle-handle"></div>
+            </div>
+          </li>
+          <li>
+            Something
+            <div class="toggle active">
+              <div class="toggle-handle"></div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </body>
+</html>
