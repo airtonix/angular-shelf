@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="http://maker.github.io/ratchet/dist/ratchet.css">
     <link rel="stylesheet" href="./stylesheets/angular.shelf.css">
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 
     <style type="text/css">
       section{
@@ -27,11 +28,12 @@
 
       .shelf-type-selector.list li{
         padding: 1em 0;
+        text-align: center;
       }
       .shelf-type-selector.list li > a:not([class*="button"]){
         cursor: pointer;
         text-align: center;
-        margin: -1em;
+        margin: -1em 0;
       }
       .shelf-type-selector li a:hover{
         background: #ddd;
@@ -40,6 +42,11 @@
         font-size: 2em;
         margin:1em 0;
         text-align: center;
+      }
+      .selected-shelf-type + p{
+        text-align: center;
+        margin: 1em auto;
+        width: 75%;
       }
     </style>
   </head>
@@ -54,20 +61,25 @@
       <section class="shelf-cover">
         <header class="bar-title">
           <h1 class="title">{{ Title }}</h1>
-          <button class='button shelf-toggle'>Settings</button>
+          <button class='button shelf-toggle'><abrr class='icon-cog'></abrr></button>
         </header>
         <div class="content">
-          <h4 class="selected-shelf-type">{{SelectedShelfType}}</h4>
-          <p>click to change the shelf behaviour, then click the settings button above.</p>
-          <ul class="list shelf-type-selector">
-            <li data-ng-repeat="type in shelfTypes" data-ng-click="changeShelf(type)">{{type}}</li>
-          </ul>
+          <div class="content-padded">
+            <h4 class="selected-shelf-type">{{SelectedShelfType}}</h4>
+            <p>click to change the shelf behaviour, then click the settings button above.</p>
+            <ul class="list inset shelf-type-selector">
+              <li data-ng-repeat="type in shelfTypes">
+                <a data-ng-click="changeShelf(type)">{{type}}</a></li>
+            </ul>
+            <a class="button-block" data-ng-href="https://github.com/airtonix/angular-shelf/">
+              <abrr class='icon-github'></abrr> github repo</a>
+          </div>
         </div>
       </section>
 
       <section class="shelf">
         <header class="bar-title">
-          <button class='button shelf-toggle'>x</button>
+          <button class='button shelf-toggle'><abrr class='icon-remove'></abrr></button>
           <h1 class="title">Settings</h1>
         </header>
         <div class="content content-padded">
